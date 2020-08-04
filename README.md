@@ -21,3 +21,4 @@ World-Creator-Support Unitエディター拡張スクリプト で作ったゲ�
 うろうろする豆腐を棒で叩いて壊す RPG風サンプル です。
 
 https://cluster.mu/w/c98bc16f-a21e-42f9-a0ce-b4f2ebc5bde2
+![豆腐](./res/rpg-sample.png)
