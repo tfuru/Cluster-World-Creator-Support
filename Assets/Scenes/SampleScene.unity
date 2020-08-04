@@ -188,6 +188,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 5599625775619219111, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: id.value
+      value: 10429206239551236897
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654097311427172380, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: itemTemplateId.value
+      value: 10343778196462269175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a67c95b5c9aa43a4fa4deed37243f1ed, type: 3}
 --- !u!4 &224919994 stripped
@@ -327,6 +337,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4869137063434443327, guid: 76216e08069d10241baed136c10e312b,
+        type: 3}
+      propertyPath: itemTemplateId.value
+      value: 11257874656665475021
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897591736146285669, guid: 76216e08069d10241baed136c10e312b,
+        type: 3}
+      propertyPath: id.value
+      value: 2346058587296093421
+      objectReference: {fileID: 0}
     - target: {fileID: 9007757404756394416, guid: 76216e08069d10241baed136c10e312b,
         type: 3}
       propertyPath: m_Name
@@ -407,6 +427,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 5599625775619219111, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: id.value
+      value: 12769429649755572672
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654097311427172380, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: itemTemplateId.value
+      value: 10343778196462269175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a67c95b5c9aa43a4fa4deed37243f1ed, type: 3}
 --- !u!4 &344961471 stripped
@@ -439,7 +469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705075469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -3}
+  m_LocalPosition: {x: 3.48, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1275952877}
@@ -675,6 +705,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 5599625775619219111, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: id.value
+      value: 4114482638473645781
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654097311427172380, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: itemTemplateId.value
+      value: 10343778196462269175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a67c95b5c9aa43a4fa4deed37243f1ed, type: 3}
 --- !u!4 &946354765 stripped
@@ -768,6 +808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StartSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235488091003577093, guid: f232282430557fa489af0429daeb8926,
+        type: 3}
+      propertyPath: id.value
+      value: 7555750579939267166
       objectReference: {fileID: 0}
     - target: {fileID: 6649601790918997579, guid: f232282430557fa489af0429daeb8926,
         type: 3}
@@ -899,6 +944,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 5599625775619219111, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: id.value
+      value: 11411192046117586957
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654097311427172380, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: itemTemplateId.value
+      value: 10343778196462269175
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a67c95b5c9aa43a4fa4deed37243f1ed, type: 3}
 --- !u!4 &1307187379 stripped
@@ -974,6 +1029,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5463840338582947336, guid: f4c095c6caf53704084c980ccdb24ad9,
+        type: 3}
+      propertyPath: id.value
+      value: 16245062114770849225
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4c095c6caf53704084c980ccdb24ad9, type: 3}
 --- !u!4 &1488692391 stripped
@@ -1048,6 +1108,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5599625775619219111, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: id.value
+      value: 694761707294788855
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654097311427172380, guid: a67c95b5c9aa43a4fa4deed37243f1ed,
+        type: 3}
+      propertyPath: itemTemplateId.value
+      value: 10343778196462269175
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a67c95b5c9aa43a4fa4deed37243f1ed, type: 3}
