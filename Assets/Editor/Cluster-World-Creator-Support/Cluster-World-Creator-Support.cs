@@ -172,7 +172,7 @@ public class ClusterWorldCreatorSupport : EditorWindow
     private static void CopyRpgPrefab()
     {
         if (AssetDatabase.IsValidFolder("Assets/" + PATH_DIST_REFAB_FOLDER_NAME) == false){
-            Debug.Log("Create DIST_FOLDER");
+            Debug.Log("Create REFAB_FOLDER");
             AssetDatabase.CreateFolder("Assets", PATH_DIST_REFAB_FOLDER_NAME);
         }
         FileUtil.CopyFileOrDirectory(PATH_SRC_RPG_FOLDER_PATH, PATH_DIST_RPG_FOLDER_PATH);
@@ -187,9 +187,9 @@ public class ClusterWorldCreatorSupport : EditorWindow
 
     private static void CopyRacingPrefab()
     {
-        if (AssetDatabase.IsValidFolder("Assets/" + PATH_DIST_RACING_FOLDER_PATH) == false){
-            Debug.Log("Create DIST_FOLDER");
-            AssetDatabase.CreateFolder("Assets", PATH_DIST_RACING_FOLDER_PATH);
+        if (AssetDatabase.IsValidFolder("Assets/" + PATH_DIST_REFAB_FOLDER_NAME) == false){
+            Debug.Log("Create REFAB_FOLDER");
+            AssetDatabase.CreateFolder("Assets", PATH_DIST_REFAB_FOLDER_NAME);
         }
         FileUtil.CopyFileOrDirectory(PATH_SRC_RACING_FOLDER_PATH, PATH_DIST_RACING_FOLDER_PATH);
 
