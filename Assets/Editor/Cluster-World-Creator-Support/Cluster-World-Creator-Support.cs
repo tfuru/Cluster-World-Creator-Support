@@ -34,6 +34,10 @@ public class ClusterWorldCreatorSupport : EditorWindow
     private static string PATH_SRC_RPG_FOLDER_PATH = "Assets/Editor/Cluster-World-Creator-Support/Assets/Prefab/Rpg";
     private static string PATH_DIST_RPG_FOLDER_PATH = "Assets/Prefab/Rpg";
     
+    // 乗り物向け Prefab/Racing/
+    private static string PATH_SRC_RACING_FOLDER_PATH = "Assets/Editor/Cluster-World-Creator-Support/Assets/Prefab/Racing";
+    private static string PATH_DIST_RACING_FOLDER_PATH = "Assets/Prefab/Racing";
+
     [MenuItem ("World-Creator-Support/ワールド初期設定")]
     private static void InitWorld()
     {
@@ -78,7 +82,15 @@ public class ClusterWorldCreatorSupport : EditorWindow
             if (GUILayout.Button("武器,モンスター等取り込み"))
             {
                 CopyRpgPrefab();
-            }            
+            }    
+
+            // セパレーター
+            Separator(0);
+            EditorGUILayout.LabelField("乗り物系ワールド向け", EditorStyles.boldLabel);
+            if (GUILayout.Button("乗物, リセット取り込み"))
+            {
+                CopyRacingPrefab();
+            }                   
         }
     }
 
@@ -160,7 +172,7 @@ public class ClusterWorldCreatorSupport : EditorWindow
     private static void CopyRpgPrefab()
     {
         if (AssetDatabase.IsValidFolder("Assets/" + PATH_DIST_REFAB_FOLDER_NAME) == false){
-            Debug.Log("Create REFAB_FOLDER");
+            Debug.Log("Create DIST_FOLDER");
             AssetDatabase.CreateFolder("Assets", PATH_DIST_REFAB_FOLDER_NAME);
         }
         FileUtil.CopyFileOrDirectory(PATH_SRC_RPG_FOLDER_PATH, PATH_DIST_RPG_FOLDER_PATH);
@@ -170,6 +182,22 @@ public class ClusterWorldCreatorSupport : EditorWindow
         // ToDo シーンに配置する
         // ToDo 各 Spawn の CreateItemGimik 対象を Assets/Prefab/Rpg を参照するように修正が必要 
         
+        // AssetDatabase.Refresh();
+    }
+
+    private static void CopyRacingPrefab()
+    {
+        if (AssetDatabase.IsValidFolder("Assets/" + PATH_DIST_RACING_FOLDER_PATH) == false){
+            Debug.Log("Create DIST_FOLDER");
+            AssetDatabase.CreateFolder("Assets", PATH_DIST_RACING_FOLDER_PATH);
+        }
+        FileUtil.CopyFileOrDirectory(PATH_SRC_RACING_FOLDER_PATH, PATH_DIST_RACING_FOLDER_PATH);
+
+        // 更新
+        AssetDatabase.Refresh();
+
+        // ToDo シーンに配置する
+
         // AssetDatabase.Refresh();
     }
 }
