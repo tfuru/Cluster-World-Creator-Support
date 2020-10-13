@@ -30,6 +30,13 @@ public class ClusterWorldCreatorSupport : EditorWindow
     private static GameObject selectRandomPrefab = null;
     private static int selectRandomPrefabCount = 5;
 
+    // タイル配置するプレハブ
+    private static GameObject selectTileParent = null;
+    private static GameObject selectTilePrefab = null;
+    private static int tilePrefabX = 15;
+    private static int tilePrefabY = 0;
+    private static int tilePrefabZ = 15;
+
     // RPG 向け Prefab/Rpg/
     private static string PATH_SRC_RPG_FOLDER_PATH = "Assets/Editor/Cluster-World-Creator-Support/Assets/Prefab/Rpg";
     private static string PATH_DIST_RPG_FOLDER_PATH = "Assets/Prefab/Rpg";
@@ -75,7 +82,33 @@ public class ClusterWorldCreatorSupport : EditorWindow
             {
                 RandomPrefab();
             }
-            
+
+            // セパレーター
+            Separator(0);
+            EditorGUILayout.LabelField("Prefabタイル配置", EditorStyles.boldLabel);
+            using (new GUILayout.HorizontalScope())
+            {
+
+                EditorGUILayout.LabelField("親GameObject",  GUILayout.Width (100));                
+                selectTileParent = EditorGUILayout.ObjectField(selectTileParent, typeof(Object), true) as GameObject;
+            }
+            using (new GUILayout.HorizontalScope())
+            {
+                EditorGUILayout.LabelField("子Prefab",  GUILayout.Width (100));
+                selectTilePrefab = EditorGUILayout.ObjectField(selectTilePrefab, typeof(Object), true) as GameObject;
+            }
+            using (new GUILayout.HorizontalScope())
+            {
+                EditorGUILayout.LabelField("X,Y,Z",  GUILayout.Width (100));
+                tilePrefabX = EditorGUILayout.IntField(tilePrefabX);
+                tilePrefabY = EditorGUILayout.IntField(tilePrefabY);
+                tilePrefabZ = EditorGUILayout.IntField(tilePrefabZ);
+            }            
+            if (GUILayout.Button("タイル配置"))
+            {
+                TilePrefab();
+            }
+
             // セパレーター
             Separator(0);
             EditorGUILayout.LabelField("RPG風ワールド向け", EditorStyles.boldLabel);
@@ -200,4 +233,43 @@ public class ClusterWorldCreatorSupport : EditorWindow
 
         // AssetDatabase.Refresh();
     }
+
+    // プレハブをタイル状に配置する
+    private static void TilePrefab()
+    {
+        if (selectTileParent == null) return;
+        if (selectTilePrefab == null) return;
+        
+        Debug.Log("TilePrefab");
+        Debug.Log("親GameObject " + selectTileParent.name);
+        Debug.Log("子Prefab " + selectTilePrefab.name);
+        Debug.Log("X,Y " + tilePrefabX + " " + tilePrefabY + " " + tilePrefabZ);
+
+        Transform tf = selectTilePrefab.transform;
+        Vector3 localScale = tf.localScale;
+        
+        Debug.Log("localScale " + localScale.x + " " + localScale.y + " " + localScale.z);
+        float sizeX = localScale.x;
+        float sizeY = localScale.y;
+        float sizeZ = localScale.z;
+        float marginX = localScale.x;
+        float marginZ = localScale.z;
+
+        // tilePrefabX x tilePrefabY にタイル配置
+        for (int i = 0; i < tilePrefabX; i++)
+        {
+            for (float  j = 0; j < tilePrefabZ; j++)
+            {
+                var gameObj = PrefabUtility.InstantiatePrefab(selectTilePrefab) as GameObject;
+                float  x = sizeX*(float)i + sizeX;
+                float  y = (float)tilePrefabY;
+                float  z = sizeZ*(float)j + sizeZ;
+                gameObj.transform.position = new Vector3(x,y,z);
+                gameObj.transform.parent = selectTileParent.transform;
+            }
+        }
+
+        // シーンを保存する
+        EditorSceneManager.SaveOpenScenes();
+    }    
 }
